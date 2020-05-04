@@ -13,4 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/folders/{id}/tasks', 'TaskController@index')->name('tasks.index');
+// Task
+Route::get("/folders/{id}/tasks", "TaskController@index")->name("tasks.index");
+
+// Folder
+Route::get("/folders/create", "FolderController@showCreateForm")->name("folders.create");
+Route::post("/folders/create", "FolderController@create");
