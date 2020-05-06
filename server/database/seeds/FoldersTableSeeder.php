@@ -13,6 +13,8 @@ class FoldersTableSeeder extends Seeder
      */
     public function run()
     {
+        $user = DB::table('users')->first();
+
         $titles = ["プライベート", "仕事", "旅行"];
 
         $now = Carbon::now();
@@ -22,6 +24,7 @@ class FoldersTableSeeder extends Seeder
                 "title" => $title,
                 "created_at" => $now,
                 "updated_at" => $now,
+                "user_id" => $user->id,
             ]);
         }
     }
