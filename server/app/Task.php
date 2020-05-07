@@ -7,6 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Task extends Model
 {
+
+    protected $casts = [
+        'id' => 'int' ,
+        'folder_id' => 'int',
+        'title' => 'string',
+        'status' => 'int',
+        'due_date' => 'date',
+    ];
+
     const STATUS = [
         1 => "未着手",
         2 => "着手中",
